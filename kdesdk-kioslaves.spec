@@ -1,6 +1,6 @@
 Summary:	KDE SDK KIO slaves
 Name:		kdesdk-kioslaves
-Version:	4.12.1
+Version:	4.12.2
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -87,6 +87,9 @@ A KIO slave interface for SVN.
 %makeinstall_std -C build
 
 %changelog
+* Tue Feb 04 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.2-1
+- New version 4.12.2
+
 * Tue Jan 14 2014 Andrey Bondrov <andrey.bondrov@rosalab.ru> 1:4.12.1-1
 - New version 4.12.1
 
