@@ -13,10 +13,13 @@ Url:		http://www.kde.org
 %define ftpdir stable
 %endif
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs4-devel
-BuildRequires:	subversion-devel
+Patch0:		kdesdk-kioslaves-15.08.3-svn_optional.patch
+BuildRequires:	kdelibs-devel
+#BuildRequires:	subversion-devel
 Suggests:	kio4-perldoc = %{EVRD}
-Suggests:	kio4-svn = %{EVRD}
+#Suggests:	kio4-svn = %{EVRD}
+Obsoletes:	kio4-svn < 1:15:12.1
+Provides:	kio4-svn = 1:15:12.1
 
 %description
 KIO slaves for:
@@ -42,7 +45,7 @@ A KIO slave interface for Perl documentation.
 %{_kde_services}/perldoc.protocol
 
 #----------------------------------------------------------------------------
-
+%if 0
 %package -n kio4-svn
 Summary:	A KIO slave interface for SVN
 Group:		Graphical desktop/KDE
@@ -73,14 +76,16 @@ A KIO slave interface for SVN.
 %{_kde_services}/svn+ssh.protocol
 %{_kde_services}/svn.protocol
 %{_datadir}/dbus-1/interfaces/org.kde.ksvnd.xml
+%endif
 
 #----------------------------------------------------------------------------
 
 %prep
 %setup -q
+%apply_patches
 
 %build
-%cmake_kde4
+%cmake_kde4 -DBUILD_svn:BOOL=OFF
 %make
 
 %install
