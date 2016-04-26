@@ -1,7 +1,7 @@
 Summary:	KDE SDK KIO slaves
 Name:		kdesdk-kioslaves
-Version:	15.12.3
-Release:	2
+Version:	16.04.0
+Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
@@ -13,7 +13,6 @@ Url:		http://www.kde.org
 %define ftpdir stable
 %endif
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		kdesdk-kioslaves-15.08.3-svn_optional.patch
 BuildRequires:	kdelibs-devel
 #BuildRequires:	subversion-devel
 Suggests:	kio4-perldoc = %{EVRD}
