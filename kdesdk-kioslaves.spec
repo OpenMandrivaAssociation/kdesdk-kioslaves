@@ -1,6 +1,6 @@
 Summary:	KDE SDK KIO slaves
 Name:		kdesdk-kioslaves
-Version:	17.03.80
+Version:	17.04.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -34,7 +34,7 @@ Conflicts:	kdesdk4-core < 1:4.11.0
 %description -n kio-perldoc
 A KIO slave interface for Perl documentation.
 
-%files -n kio-perldoc
+%files -n kio-perldoc -f kio5_perldoc.lang
 %{_libdir}/qt5/plugins/kf5/kio/perldoc.so
 %{_datadir}/kio_perldoc
 
@@ -50,3 +50,4 @@ A KIO slave interface for Perl documentation.
 
 %install
 %ninja_install -C build
+%find_lang kio5_perldoc
