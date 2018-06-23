@@ -1,6 +1,6 @@
 Summary:	KDE SDK KIO slaves
 Name:		kdesdk-kioslaves
-Version:	 17.12.2
+Version:	 18.04.2
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
@@ -14,7 +14,7 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5KIO)
 Suggests:	kio-perldoc = %{EVRD}
-Obsoletes:	kio4-svn < 1:15:12.1
+Obsoletes:	kio4-svn < 1:15.12.1
 
 %description
 KIO slaves for:
