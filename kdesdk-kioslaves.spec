@@ -1,13 +1,13 @@
 Summary:	KDE SDK KIO slaves
 Name:		kdesdk-kioslaves
-Version:	19.11.90
+Version:	19.12.0
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	perl-devel
 BuildRequires:	cmake(ECM)
@@ -42,7 +42,7 @@ A KIO slave interface for Perl documentation.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %cmake_kde5
