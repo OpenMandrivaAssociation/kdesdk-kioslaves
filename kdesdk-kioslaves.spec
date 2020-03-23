@@ -1,6 +1,6 @@
 Summary:	KDE SDK KIO slaves
 Name:		kdesdk-kioslaves
-Version:	19.12.3
+Version:	20.03.80
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
