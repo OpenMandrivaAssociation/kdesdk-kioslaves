@@ -1,20 +1,23 @@
+# We're keeping the original name until Plasma 6
+# No need to mess with Provides: and Obsoletes:
+# for a few months...
+
 Summary:	KDE SDK KIO slaves
 Name:		kdesdk-kioslaves
-Version:	22.04.2
+Version:	22.07.90
 Release:	1
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
 Url:		http://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kdesdk-kio-%{version}.tar.xz
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	perl-devel
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5KIO)
 Suggests:	kio-perldoc = %{EVRD}
-Obsoletes:	kio4-svn < 1:15.12.1
 
 %description
 KIO slaves for:
@@ -41,8 +44,7 @@ A KIO slave interface for Perl documentation.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1 -n kdesdk-kio-%{version}
 
 %build
 %cmake_kde5
