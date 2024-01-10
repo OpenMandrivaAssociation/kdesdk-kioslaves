@@ -5,7 +5,7 @@
 Summary:	KDE SDK KIO slaves
 Name:		kdesdk-kioslaves
 Version:	23.08.4
-Release:	2
+Release:	3
 Epoch:		1
 Group:		Graphical desktop/KDE
 License:	GPLv2+
